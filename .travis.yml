@@ -2,10 +2,12 @@ language: node_js
 node_js:
   - "stable"
 dist: focal
+os: linux
 deploy:
   provider: pages
-  skip_cleanup: true
+  cleanup: true
   github_token: $github_token
   local_dir: build
   on:
     branch: main
+  strategy: git
